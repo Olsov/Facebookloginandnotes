@@ -1,0 +1,10 @@
+<div class="login-main">
+    <div class="login" *ngIf="login === false">
+        <button (click)="facebookLogin()">Login fb</button>
+    </div>
+    <div class="logout" *ngIf="login === true ">
+        <button (click)="facebookLogout()">Logout</button>
+        <app-user [user]='loginUser'></app-user>
+        <app-notes [facebookid]="loginId"></app-notes>
+    </div>
+</div>

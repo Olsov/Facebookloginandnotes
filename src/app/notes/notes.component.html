@@ -1,0 +1,32 @@
+<div class="notes">
+  <input
+    #newNotes
+    (keyup.enter)="addNote(newNotes.value)"
+  />
+  <div class="all-note" >
+  <ul class="menu">
+    <li (click)="filterNotes(-1)">
+      All notes
+    </li>
+    <li (click)="filterNotes(1)">
+      Done notes
+    </li>
+    <li (click)="filterNotes(0)">
+      Undone notes
+    </li>
+  </ul>
+  <ul *ngIf="notes.length">
+    <li *ngFor="let note of notes; let i = index;">
+      <div class="one-note">
+        <input #checkbox
+               [checked]="note.type === 1"
+               type="checkbox" (click)="setDone(i,checkbox.checked)">
+        <input #textChange
+               [class.done]="note.type === 1"
+                (change)="changeElement(i, textChange.value)"  type="text" value="{{note.text}}">
+        <button (click)="deleteElement(i)">Delete</button>
+      </div>
+    </li>
+  </ul>
+  </div>
+</div>

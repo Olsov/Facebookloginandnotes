@@ -1,0 +1,17 @@
+.done{
+    text-decoration:line-through
+}
+.menu{
+    list-style: unset;
+
+}
+.menu li{
+    display: inline-block;
+    margin-right: 10px;
+}
+ul{
+    list-style-type: none;
+}
+input {
+    border: 1px solid black;
+}
